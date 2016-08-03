@@ -38,7 +38,7 @@ int TopDown(int pos,int mask){
 		int min = INF;
 		for (int nxt = 0 ; nxt < V ; ++nxt)
 			if (nxt != pos && (mask & (1 << nxt)) == 0)
-				min = Math.min(min, cost[pos][nxt] + Top_Down_TSP(nxt, mask | (1 << nxt)));
+				min = Math.min(min, cost[pos][nxt] + TopDown(nxt, mask | (1 << nxt)));
 		return memo[pos][mask] = min;
 	}
 }
