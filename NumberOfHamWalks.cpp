@@ -6,6 +6,18 @@ int V,E;
 int dp[MAXN][MAXV];
 vector<vi> dist;
 
+int bitCNT(int a){
+    int sum = 0;
+    while (a>0) {
+        if (a&1) {
+            sum++;
+        }
+        a>>=1;
+    }
+    return sum;
+}
+
+
 
 int numOfHamWalks(){
     memset(dp, 0, sizeof(dp));
@@ -13,6 +25,7 @@ int numOfHamWalks(){
         dp[1<<i][i] = 1;
     }
     for (int msk = 1; msk<(1<<V); msk++) { //dist[i][j] = 1 if there is a path 0 otherwise
+        if(bitCNT(msk)<=1) continue;
         for (int cur = 0; cur<V; cur++) {
             if ( (msk & (1<<cur) ) == 0) {
                 continue;
