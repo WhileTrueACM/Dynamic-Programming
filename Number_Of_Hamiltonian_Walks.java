@@ -1,7 +1,7 @@
 static int V;
 	static ArrayList<Integer> adjList [];
 	
-	static int Number_Of_Hamiltonian_Walks () {
+	static int Number_Of_Hamiltonian_Walks () { // Time Complexity O(2 ^ n  * n ^ 2)
 		int dp [][] = new int[1 << V][V];
 		
 		for (int i = 0 ; i < V ; ++i)
