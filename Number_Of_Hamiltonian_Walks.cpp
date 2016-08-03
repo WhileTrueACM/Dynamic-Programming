@@ -32,7 +32,7 @@ int numOfHamWalks(){
             }
             for (int nxt = 0; nxt<V; nxt++) {
                 
-                if (cur == nxt || (msk&(1<<nxt)) || dist[cur][nxt] == 0) {
+                if (cur == nxt || !(msk&(1<<nxt)) || dist[cur][nxt] == 0) {
                     continue;
                 }else{
                     dp[msk][cur] += dp[msk^(1<<cur)][nxt];
