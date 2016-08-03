@@ -8,7 +8,7 @@ static int V;
 			dp[1 << i][i] = 1;
 		
 		for (int mask = 1 ; mask < 1 << V ; ++mask) {
-				if (Integer.bitCount(mask) == 0) continue;
+				if (Integer.bitCount(mask) <= 1) continue;
 				for (int current = 0 ; current < V ; ++current) {
 					if (((1 << current) & mask) == 0) continue;
 					
