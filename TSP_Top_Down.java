@@ -1,4 +1,4 @@
-  static int INF = (int)1e9;  
+	static int INF = (int)1e9;  
 	static int V;
 	static int cost [][];
 	
@@ -8,7 +8,7 @@
 		
 		int min = INF;
 		for (int nxt = 0 ; nxt < V ; ++nxt)
-			if (nxt != pos && ((mask) & nxt) == 0)
+			if (nxt != pos && (mask & (1 << nxt)) == 0)
 				min = Math.min(min, cost[pos][nxt] + Top_Down_TSP(nxt, mask | (1 << nxt)));
 		return min;
 	}
