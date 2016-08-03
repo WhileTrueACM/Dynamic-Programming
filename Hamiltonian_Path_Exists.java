@@ -28,6 +28,9 @@ static boolean Hamiltonian_Path_Exists () { // Time Complexity O(2^n *  n ^ 2)
 		return ans;
 	}
 	
+	static int V;
+	static ArrayList<Integer> adjList [];
+	
 	static boolean Hamiltonian_Path_Exists_Improved () { // Time Complexity O(2^n *  n)
 		int edges [] = new int[V];
 		for (int u = 0 ; u < V ; ++u) {
@@ -43,6 +46,7 @@ static boolean Hamiltonian_Path_Exists () { // Time Complexity O(2^n *  n ^ 2)
 		for (int mask = 1 ; mask < 1 << V ; ++mask) {
 			if (Integer.bitCount(mask) <= 1) continue;
 			for (int u = 0 ; u < V ; ++u) {
+				if (((1 << u) & mask) == 0) continue;
 				if ((dp[mask ^ (1 << u)] & edges[u]) != 0)
 					dp[mask] += (1 << u);
 			}
