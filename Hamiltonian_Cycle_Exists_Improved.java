@@ -20,6 +20,7 @@ static int V;
 					dp[mask] += (1 << u);
 			}
 		}
+		
 		int last = dp[(1 << V) - 1];
 		for (int i = 0 ; i < V ; ++i) {
 			if (((1 << i) & last) != 0) {
