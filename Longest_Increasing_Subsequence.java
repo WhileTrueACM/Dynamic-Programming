@@ -2,6 +2,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 
+
+/* LIS using segments TREE */
+/* sort the array according to the values remembering the index , let All tree node be zeros
+loop through the sorted array find RMAXQ up to the index of the current element and plus one */
+
+
+
 public class LIS {
 	
 	static int lis(int[] a, int n)
